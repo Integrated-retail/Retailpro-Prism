@@ -42,6 +42,7 @@ header h1 {
 #whatsapp-button svg {
   width: 32px;
   height: 32px;
+  transform: translateX(0.5px) translateY(0.5px); /* ✅ 细调到居中 */
   fill: white;
 }
 
@@ -55,4 +56,8 @@ header h1 {
   position: fixed !important;
   bottom: 0 !important;
   right: 0 !important;
+  transform: scale(1.07);    /* 约等于放大到 60px */
+  transform-origin: bottom right; /* 从右下角放大，不偏移 */
+
 }
+
