@@ -317,6 +317,15 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
                 safeRedirect(extractedUrl);
             }
         });
+
+		// 2. 发送触发词（必须和你在 Studio 里写的 'START_MY_WELCOME' 一模一样，注意大小写）
+	    // 建议加 500ms-800ms 延迟，确保 updateUser 已经先一步传到了服务器
+	    setTimeout(() => {
+	        window.botpress.sendPayload({
+	            type: 'text',
+	            text: 'START_MY_WELCOME' 
+	        });
+	    }, 800);
     });
 
   
@@ -333,34 +342,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
           timestamp: new Date().toISOString()
         }
       });
-
-
-// When webchat is ready
-    window.botpress.on('webchat:initialized', () => {
-      console.log('✅ Webchat initialized');
-
-      // STEP 1: Upd2ate User with data
-      window.botpress.updateUser({
-        data: {
-          firstname:urlParams.get('firstname') || "",
-          page_name: "Cegid Retail",
-          category: "general",
-          timestamp: new Date().toISOString()
-        }
-      });
-
-	// 2. 发送触发词（必须和你在 Studio 里写的 'START_MY_WELCOME' 一模一样，注意大小写）
-    // 建议加 500ms-800ms 延迟，确保 updateUser 已经先一步传到了服务器
-    setTimeout(() => {
-        window.botpress.sendPayload({
-            type: 'text',
-            text: 'START_MY_WELCOME' 
-        });
-    }, 800);	
-    });
-
-
-		
+	
     });	
   // --- Hamburger drawer ---
   const hamburger = document.getElementById('hamburger');
