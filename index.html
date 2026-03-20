@@ -321,7 +321,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
 		// 2. 发送触发词（必须和你在 Studio 里写的 'START_MY_WELCOME' 一模一样，注意大小写）
 	    // 建议加 500ms-800ms 延迟，确保 updateUser 已经先一步传到了服务器
 	    setTimeout(() => {
-	        window.botpress.sendPayload({
+	        window.botpress.sendMessage({
 	            type: 'text',
 	            text: 'START_MY_WELCOME' 
 	        });
