@@ -21,8 +21,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 
 <!-- Lunr.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-    <!-- <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>-->
-  <script src="https://cdn.botpress.cloud/desk/webchat/v4.0/inject.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+
 <style>
   #webchat .bpWebchat {
     position: unset;
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Object.keys(localStorage).forEach(key => { if(key.includes('bp')) localStorage.removeItem(key); });
 const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_' + Math.random().toString(36).substring(2, 7));
 
-/*  
+ 
   window.botpress.init({
   "botId": "271349b4-50c2-4d68-98ab-dc514c18d354",
   "userId": randomUserId,
@@ -240,8 +240,8 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
   },
   "clientId": "d0bd4d08-40a0-4fb6-8948-73340f88a84c",
   "selector": "#webchat"
-});*/
-
+});
+/*
  window.botpress.init({
   "botId": "e7e38254-84fe-4d31-a5de-ddfd786d9420",
   "configuration": {
@@ -271,7 +271,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
   "clientId": "752bc3c1-c7d6-49c1-a855-f58c1baf56ef",
   "selector": "#webchat"
 });
-
+*/
 	 window.botpress.on('webchat:ready', () => {
         console.log("🤖 Botpress 已就绪，深度监听器启动...");
         window.botpress.open();
